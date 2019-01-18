@@ -16,6 +16,10 @@ let genreSchema = mongoose.Schema({
 let Genre = module.exports = mongoose.model('Genre', genreSchema)
 
 // Get Genres
-module.exports.getGenres = (callback) => {
+module.exports.getGenres = (callback, limit) => {
     Genre.find(callback).limit(limit)
+}
+
+module.exports.getGenreById = (id, callback) => {
+    Genre.findById(id, callback)
 }
